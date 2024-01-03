@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="styles.css" />
+	<style>
+	  polyline {
+		  stroke-width: 0.1;
+	  }
+	</style>
+	
+  </head>
+  
+  <body>
+	<svg id="main" viewBox="-5 -5 10 10" transform="matrix(1 0 0 -1 0 0)">
+	  <script type="module">
+		<![CDATA[
+			import {enablePan, enableZoom, polylineFromFunc} from "./svgutils.mjs";
+			let svg = document.getElementById("main");
+			let parabola = polylineFromFunc((x) => Math.sin(3*x), -3, 3);
+			parabola.setAttribute("stroke", "cyan");
+			svg.appendChild(parabola);
+			
+			enablePan(svg);
+			enableZoom(svg);
+		]]>
+	  </script>
+	</svg>
+	<textarea>
+	</textarea>
+  </body>
+</html>
+
