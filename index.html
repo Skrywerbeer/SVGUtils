@@ -14,12 +14,12 @@
   </head>
   
   <body>
-	<svg id="main" viewBox="-5 -5 10 10" transform="matrix(1 0 0 -1 0 0)">
+	<svg id="main" viewBox="-5 -5 10 10">
 	  <script type="module">
 		<![CDATA[
 			import {enablePan, enableZoom, polylineFromFunc} from "./svgutils.mjs";
 			let svg = document.getElementById("main");
-			let parabola = polylineFromFunc((x) => Math.sin(3*x), -3, 3);
+			let parabola = polylineFromFunc((x) => Math.sin(3*x), 0, 3);
 			parabola.setAttribute("stroke", "cyan");
 			svg.appendChild(parabola);
 			

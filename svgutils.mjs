@@ -11,7 +11,7 @@ export function polylineFromFunc(func, x1 = 0, x2 = 1, step = 0.1) {
         step *= -1.0;
     let points = new Array();
     for (let i = x1; i < x2 + step; i += step)
-        points.push(`${i} ${func(i)}`);
+        points.push(`${i} ${-1.0 * func(i)}`);
     poly.setAttribute("points", points.join(", "));
     return poly;
 }
